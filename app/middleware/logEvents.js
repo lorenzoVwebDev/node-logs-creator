@@ -19,10 +19,14 @@ async function logEvents(msg, type) {
   }
 } 
 
-const logger = async (req, res, next) => {
+const requestLogger = async (req, res, next) => {
   await logEvents(`${req.method}\t${req.headers.origin}\t${req.url}`, 'request');
   next();
 }
 
+const errorLogger = async (message) => {
+  await logEvents(`\t${message}`, 'error');
+}
 
-module.exports = {logEvents, logger}
+
+module.exports = {logEvents, requestLogger, errorLogger}

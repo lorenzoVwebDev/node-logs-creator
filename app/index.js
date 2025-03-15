@@ -6,13 +6,16 @@ const fsPromises = require('fs').promises;
 const app = express();
 const os = require('os');
 const { errorMonitor } = require('events');
-const {logEvents, logger} = require('./app/middleware/logEvents.js');
+const {logEvents, requestLogger} = require('./middleware/logEvents.js');
 const PORT = process.env.PORT || 3000;
 
-app.use(logger);
+app.use(requestLogger);
 
-app.use('/', )
+app.use(express.static(path.join(__dirname, '../','public')));
+
+app.use('/testerror', require('./routes/testerror.route.js'))
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+ 

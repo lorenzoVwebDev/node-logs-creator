@@ -4,16 +4,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon app/index.js",
+    "sass": "nodemon ./public/assets/js/utils/styleCompiler.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "all": "^0.0.0",
     "date-fns": "^4.1.0",
+    "dayjs": "^1.11.13",
     "express": "^4.21.2",
+    "glob": "^11.0.1",
     "node": "^23.9.0",
+    "sass": "^1.83.4",
     "uuid": "^11.1.0"
   },
   "devDependencies": {

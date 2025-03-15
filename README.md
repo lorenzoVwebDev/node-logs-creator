@@ -1,6 +1,10 @@
 # "node-logs-creator”
   A node logs creator
-
+## Features
+- mvc structure
+- Routing 
+- logs middleware to handle both access logs and error logs
+- express method .static() to serve static files from the public folder 
 ✅ [Check out my WebSite to watch many other portfolio projects](https://lorenzo-viganego.com/)
 
 ## Features
