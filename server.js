@@ -6,15 +6,13 @@ const fsPromises = require('fs').promises;
 const app = express();
 const os = require('os');
 const { errorMonitor } = require('events');
+const {logEvents, logger} = require('./app/middleware/logEvents.js');
+const PORT = process.env.PORT || 3000;
 
+app.use(logger);
 
-const newFunc = async (a, b) => {
-  const string = uuid() + ' ' + a + '\n';
-  const write = await fsPromises.writeFile(path.join('./', 'storage', 'test', 'test.txt'), string);
+app.use('/', )
 
-  const read = await fsPromises.readFile(path.join('./', 'storage', 'test', 'test.txt'));
-  console.log(read.toString())
-  const unlink = await fsPromises.unlink(path.join('./', 'storage', 'test', 'test.txt'));
-}
-
-module.exports = {newFunc}
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
